@@ -52,7 +52,11 @@ var allPredictions = ["The early bird gets the worm, but the second mouse gets t
 //console.log(getPrediction());
 
 function show(){
-	var p = document.createElement("P");   // Create a <button> element
-	p.innerHTML = getPrediction();                   // Insert text
+	var p = document.createElement("P");
+	var obj = {
+		"response_type": "in_channel",
+		"text": getPrediction()
+	};
+	p.innerHTML = JSON.stringify(obj);                   // Insert text
 	document.body.appendChild(p);  
 }
